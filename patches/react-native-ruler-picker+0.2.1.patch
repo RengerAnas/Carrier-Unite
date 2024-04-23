@@ -1,0 +1,93 @@
+diff --git a/node_modules/react-native-ruler-picker/src/components/RulerPicker.tsx b/node_modules/react-native-ruler-picker/src/components/RulerPicker.tsx
+index 2dd82da..b8f4d01 100644
+--- a/node_modules/react-native-ruler-picker/src/components/RulerPicker.tsx
++++ b/node_modules/react-native-ruler-picker/src/components/RulerPicker.tsx
+@@ -7,6 +7,7 @@ import {
+   Text,
+   Animated,
+   TextInput,
++  FlatList,
+ } from 'react-native';
+ import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
+ 
+@@ -253,9 +254,9 @@ export const RulerPicker = ({
+       step,
+     ]
+   );
+-
+   return (
+-    <View style={{ width, height }}>
++    <View style={{ width, height , justifyContent:"center" }}>
++      
+       <AnimatedFlashList
+         data={arrData}
+         keyExtractor={(_, index) => index.toString()}
+@@ -294,7 +295,7 @@ export const RulerPicker = ({
+           },
+         ]}
+       >
+-        <View
++        {/* <View
+           style={[
+             styles.displayTextContainer,
+             {
+@@ -335,7 +336,7 @@ export const RulerPicker = ({
+               {unit}
+             </Text>
+           )}
+-        </View>
++        </View> */}
+         <View
+           style={[
+             {
+@@ -352,8 +353,8 @@ export const RulerPicker = ({
+ 
+ const styles = StyleSheet.create({
+   indicator: {
+-    position: 'absolute',
+-    top: '50%',
++    // position: 'absolute',
++    // top: '50%',
+     width: '100%',
+     alignItems: 'center',
+   },
+diff --git a/node_modules/react-native-ruler-picker/src/components/RulerPickerItem.tsx b/node_modules/react-native-ruler-picker/src/components/RulerPickerItem.tsx
+index e95a6d7..cc41191 100644
+--- a/node_modules/react-native-ruler-picker/src/components/RulerPickerItem.tsx
++++ b/node_modules/react-native-ruler-picker/src/components/RulerPickerItem.tsx
+@@ -1,6 +1,6 @@
+ /* eslint-disable react-native/no-inline-styles */
+ import React from 'react';
+-import { View } from 'react-native';
++import { Text, View } from 'react-native';
+ 
+ export type RulerPickerItemProps = {
+   /**
+@@ -61,6 +61,7 @@ export const RulerPickerItem = React.memo(
+     const height = isLong ? longStepHeight : shortStepHeight;
+ 
+     return (
++      <>
+       <View
+         style={[
+           {
+@@ -78,11 +79,18 @@ export const RulerPickerItem = React.memo(
+               width: '100%',
+               height: height,
+               backgroundColor: isLong ? longStepColor : shortStepColor,
+-              marginTop: isLong ? 0 : shortStepHeight,
++              // marginTop: isLong ? 0 : shortStepHeight,
+             },
+           ]}
+         />
+       </View>
++      {/* {isLong && <Text style={{
++        position: 'absolute',
++        bottom: 0,
++        // width: 50,
++        // left: -25,
++      }}>{index}</Text>} */}
++      </>
+     );
+   }
+ );

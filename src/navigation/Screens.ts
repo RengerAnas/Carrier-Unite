@@ -1,0 +1,13 @@
+export {default as Home} from '../views/private/Home/Home';
+export {default as Profile} from '../views/private/Profile/Profile';
+export {default as Login} from '../views/auth/Login/Login';
+export {default as Register} from '../views/auth/Register/Register';
+// export {default as Message} from '../views/private/Messages/Messages';
+// export {default as OrderDetail} from '../views/private/Home/OrderDetail';
+// export {default as MyBookingDetail} from '../views/private/Home/MyBookingDetail';
+// export {default as Chat} from '../views/private/Messages/Chat';
+// export {default as EditProfile} from '../views/private/Profile/Screens/EditProfile';
+// export {default as ChangePass} from '../views/private/Profile/Screens/ChangePass';
+// export {default as Notification} from '../views/private/Profile/Screens/Notification';
+// export {default as MyVehicles} from '../views/private/Profile/Screens/MyVehicles';
+// export {default as Settings} from '../views/private/Profile/Screens/Settings';
